@@ -7,10 +7,24 @@
         <% @messages.each do |message| %>
             <span class="label label-warning"><%= message.name %></span>
             <%= message.body %>
+            (<%= link_to "edit" , edit_message_path(message) %>
+            <%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+            )
             <br>
         <% end %>
     </div>
 </div>
 
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>投稿フォーム</h2>
+    </div>
+    <div class="panel-body">
+
 <% #部分テンプレートを読み込んでいる %>
 <%= render 'form' %>
+
+  </div>
+</div>
