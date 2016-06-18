@@ -5,7 +5,7 @@
     
     <div class="panel-body">
         <% @messages.each do |message| %>
-            <span class="label label-warning"><%= message.name %></span>
+            <span class="label label-warning"><%= message.name %><%= message.age %></span>
             <%= message.body %>
             ｜<%= link_to "編集" , edit_message_path(message) %>
             <%= link_to "削除" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
